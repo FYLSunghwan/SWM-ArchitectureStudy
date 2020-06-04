@@ -26,12 +26,12 @@ public class Dispatcher {
 			
 			switch (header) {
 			case "0x5001":
-				StreamSayHelloProtocol sayHelloProtocol = new StreamSayHelloProtocol();
-				sayHelloProtocol.handleEvent(inputStream);;
+				StreamSayHelloEventHandler sayHelloHandler = new StreamSayHelloEventHandler();
+				sayHelloHandler.handleEvent(inputStream);;
 				break;
 			case "0x6001":
-				StreamUpdateProfileProtocol updateProtocol = new StreamUpdateProfileProtocol();
-				updateProtocol.handleEvent(inputStream);
+				StreamUpdateProfileEventHandler updateHandler = new StreamUpdateProfileEventHandler();
+				updateHandler.handleEvent(inputStream);
 				break;
 			}
 			
