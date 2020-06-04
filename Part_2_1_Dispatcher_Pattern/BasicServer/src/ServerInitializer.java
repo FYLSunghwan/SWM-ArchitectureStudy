@@ -18,6 +18,7 @@ public class ServerInitializer {
 			while(true) {
 				dispatcher.dispatch(serverSocket);
 			}
+			
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
