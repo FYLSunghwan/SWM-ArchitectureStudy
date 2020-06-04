@@ -11,11 +11,15 @@ public class ServerInitializer {
 		System.out.println("Server ON :"+port);
 		
 		try {
+			// 서버 설정
 			ServerSocket serverSocket = new ServerSocket(port);
 			Socket connection;
 			
 			while(true) {
+				// Dispatcher
 				connection = serverSocket.accept();
+				
+				// Protocol
 				InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
 				BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 				String line = bufferedReader.readLine();
