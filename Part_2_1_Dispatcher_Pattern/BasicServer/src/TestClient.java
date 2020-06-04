@@ -12,8 +12,11 @@ public class TestClient {
 			String message;
 			
 			Socket socket = new Socket("127.0.0.1", 5000);
-			OutputStream out = socket.getOutputStream();
+			
 			// Stream은 리소스를 적게 먹는다.
+			OutputStream out = socket.getOutputStream();
+			
+			// Header|Payload
 			message = "0x5001|홍길동|22";
 			out.write(message.getBytes());
 			socket.close();
