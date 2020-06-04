@@ -30,6 +30,8 @@ public class Dispatcher {
 				sayHelloProtocol.handleEvent(inputStream);;
 				break;
 			case "0x6001":
+				StreamUpdateProfileProtocol updateProtocol = new StreamUpdateProfileProtocol();
+				updateProtocol.handleEvent(inputStream);
 				break;
 			}
 			
