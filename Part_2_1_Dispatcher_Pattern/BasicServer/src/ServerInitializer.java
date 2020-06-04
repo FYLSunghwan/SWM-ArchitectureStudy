@@ -13,18 +13,10 @@ public class ServerInitializer {
 		try {
 			// 서버 설정
 			ServerSocket serverSocket = new ServerSocket(port);
-			Socket connection;
+			Dispatcher dispatcher = new Dispatcher();
 			
 			while(true) {
-				// Dispatcher
-				connection = serverSocket.accept();
-				
-				// Protocol
-				InputStreamReader inputStreamReader = new InputStreamReader(connection.getInputStream());
-				BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-				String line = bufferedReader.readLine();
-				
-				System.out.println("READ:" + line);
+				dispatcher.dispatch(serverSocket);
 			}
 		} catch(IOException e) {
 			e.printStackTrace();
