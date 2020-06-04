@@ -19,7 +19,7 @@ public class Reactor {
 		Dispatcher dispatcher = new Dispatcher();
 		
 		while(true) {
-			dispatcher.dispatch(serverSocket);
+			dispatcher.dispatch(serverSocket, handleMap);
 		}
 	}
 	
