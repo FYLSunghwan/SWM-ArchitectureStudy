@@ -26,6 +26,8 @@ public class Dispatcher {
 			
 			switch (header) {
 			case "0x5001":
+				StreamSayHelloProtocol sayHelloProtocol = new StreamSayHelloProtocol();
+				sayHelloProtocol.handleEvent(inputStream);;
 				break;
 			case "0x6001":
 				break;

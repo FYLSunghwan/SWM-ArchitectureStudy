@@ -21,9 +21,16 @@ public class StreamSayHelloProtocol {
 				params[i] = token.nextToken();
 				++i;
 			}
+			
+			sayHello(params);
+			
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void sayHello(String[] params) {
+		System.out.println("SayHello -> name : " + params[0] + " age : " + params[1]);
 	}
 	
 }
