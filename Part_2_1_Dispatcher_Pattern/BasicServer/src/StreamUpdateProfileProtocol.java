@@ -22,15 +22,20 @@ public class StreamUpdateProfileProtocol {
 				++i;
 			}
 			
-			sayHello(params);
+			updateProfile(params);
 			
 		} catch(IOException e) {
 			e.printStackTrace();
 		}
 	}
 	
-	private void sayHello(String[] params) {
-		System.out.println("SayHello -> name : " + params[0] + " age : " + params[1]);
+	private void updateProfile(String[] params) {
+		System.out.println("UpdateProfile -> " +
+				" id : " + params[0] +
+				" password : " + params[1] +
+				" name : " + params[2] +
+				" age : " + params[3] +
+				" gender: " + params[4]);
 	}
 	
 }
