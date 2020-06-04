@@ -10,18 +10,12 @@ public class ServerInitializer {
 		int port = 5000;
 		System.out.println("Server ON :"+port);
 		
-		try {
-			// 서버 설정
-			ServerSocket serverSocket = new ServerSocket(port);
-			Dispatcher dispatcher = new Dispatcher();
-			
-			while(true) {
-				dispatcher.dispatch(serverSocket);
-			}
-			
-		} catch(IOException e) {
-			e.printStackTrace();
-		}
+		Reactor reactor = new Reactor(port);
+		
+		reactor.registerHandler(new StreamSayHelloEventHandler());;
+		reactor.registerHandler(new StreamUpdateProfileEventHandler());;
+		
+		reactor.startServer();
 	}
 
 }

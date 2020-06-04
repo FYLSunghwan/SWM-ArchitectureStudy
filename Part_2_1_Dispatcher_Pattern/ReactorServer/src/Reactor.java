@@ -22,4 +22,12 @@ public class Reactor {
 			dispatcher.dispatch(serverSocket);
 		}
 	}
+	
+	public void registerHandler(EventHandler handler) {
+		handleMap.put(handler.getHandler(), handler);
+	}
+	
+	public void removeHandler(EventHandler handler) {
+		handleMap.remove(handler.getHandler());
+	}
 }
